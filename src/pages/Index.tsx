@@ -1,157 +1,225 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FeatureCard from "@/components/FeatureCard";
-import PricingCard from "@/components/PricingCard";
-import PackageLimits from "@/components/PackageLimits";
-import { 
-  Rocket, 
-  Store, 
-  Palette, 
-  Package, 
-  ShoppingBag,
-  Check
-} from "lucide-react";
+import PackageCard from "@/components/PackageCard";
+import { Button } from "@/components/ui/button";
+import { Sparkles, ArrowRight, Check, Store, Palette, Package, ShoppingBag, Mail, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
-  const features = [
+  const packages = [
+    {
+      name: "Basic",
+      price: "R2,000",
+      tier: "STARTER",
+      description: "Essential tools to launch your first professional store.",
+      features: [
+        "Complete Store Setup",
+        "Free Theme Installation",
+        "Up to 15 Products",
+        "Basic Email Support",
+      ],
+    },
+    {
+      name: "Standard",
+      price: "R4,500",
+      tier: "GROWTH",
+      description: "Expanded features for growing brands and businesses.",
+      features: [
+        "Everything in Basic",
+        "Premium Theme Setup",
+        "Up to 25 Products",
+        "SEO Foundation Pack",
+        "Standard Chat Support",
+      ],
+    },
+    {
+      name: "Advanced",
+      price: "R7,500",
+      tier: "SCALING",
+      popular: true,
+      description: "Powerful tools for businesses scaling up rapidly.",
+      features: [
+        "Everything in Standard",
+        "Custom Liquid Coding",
+        "Up to 50 Products",
+        "Advanced SEO Suite",
+        "Priority Email Support",
+      ],
+    },
+    {
+      name: "Premium",
+      price: "R12,000",
+      tier: "ENTERPRISE",
+      description: "Complete ecosystem dominance with dedicated management.",
+      features: [
+        "Everything in Advanced",
+        "VIP 24/7 Dedicated Support",
+        "Unlimited Product Uploads",
+        "Full Marketing Suite",
+        "Dedicated Account Manager",
+      ],
+    },
+  ];
+
+  const whyChooseUs = [
     {
       icon: Store,
-      title: "Complete Shopify Account Setup",
-      description: "Technical configuration, domain connection, and payment gateway setup handling.",
+      title: "Complete Store Setup",
+      description: "From domain to launch, we handle every technical detail so you can focus on your products.",
     },
     {
       icon: Palette,
-      title: "Standard Theme Installation",
-      description: "Selection and installation of a high-performance free Shopify theme optimized for your niche.",
+      title: "Custom Branding",
+      description: "Stand out with a unique visual identity that resonates with your target audience.",
     },
     {
       icon: Package,
-      title: "Installation of 3-5 Essential Apps",
-      description: "Configuration of key apps for marketing, reviews, and SEO to jumpstart your growth.",
+      title: "Product Management",
+      description: "Professional upload and optimization of your products with proper tagging and SEO.",
     },
     {
       icon: ShoppingBag,
-      title: "Up to 10 Product Uploads",
-      description: "Professional formatting and upload of your first batch of products with proper tagging.",
+      title: "Conversion Optimization",
+      description: "Strategic setup of apps and features designed to turn visitors into customers.",
     },
     {
-      icon: Palette,
-      title: "Basic Brand Customization",
-      description: "Logo placement, font selection, and color scheme adjustment to align with your brand identity.",
+      icon: Mail,
+      title: "Email Automation",
+      description: "Set up automated flows to nurture leads and recover abandoned carts.",
     },
-  ];
-
-  const pricingFeatures = [
-    "Full Design & Dev",
-    "SEO & Marketing Setup",
-    "2-3 Revisions Included",
-  ];
-
-  const limits = [
-    { label: "Inventory", value: "10 Products Max", note: "Add-ons available for larger catalogs." },
-    { label: "Development", value: "Standard Theme", note: "No custom Liquid coding included." },
-    { label: "Process", value: "1 Revision Round", note: "Consolidated feedback changes." },
+    {
+      icon: TrendingUp,
+      title: "Growth Ready",
+      description: "Built to scale with your business, from your first sale to your millionth.",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Gradient overlay */}
-      <div className="fixed inset-0 pointer-events-none">
+      {/* Gradient overlays */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       <Header />
 
       <main className="relative pt-24 pb-12">
         <div className="container mx-auto px-6">
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <a href="#" className="hover:text-foreground transition-colors">Services</a>
-            <span>/</span>
-            <a href="#" className="hover:text-foreground transition-colors">Shopify Setup</a>
-            <span>/</span>
-            <span className="text-foreground">Basic Package</span>
-          </nav>
+          {/* Hero Section */}
+          <section className="text-center py-16 md:py-24">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-semibold text-primary">
+                Ecommerce Growth Partners
+              </span>
+            </div>
+            
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
+              Launch your dream<br />
+              <span className="gradient-text">Shopify store today.</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+              Choose the perfect growth engine for your business, from startup basics 
+              to complete ecosystem dominance.
+            </p>
 
-          <div className="grid lg:grid-cols-[1fr,420px] gap-12">
-            {/* Left Column */}
-            <div>
-              {/* Hero Section */}
-              <div className="mb-12">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                  <Rocket className="w-4 h-4 text-primary" />
-                  <span className="text-xs font-semibold text-primary uppercase tracking-wide">
-                    Fast Launch Ready
-                  </span>
-                </div>
-                
-                <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground leading-tight mb-6">
-                  Basic Shopify<br />
-                  <span className="gradient-text">Store Setup</span>
-                </h1>
-                
-                <p className="text-lg text-muted-foreground max-w-xl border-l-2 border-primary/50 pl-4">
-                  The perfect starter kit for new businesses looking to launch quickly. 
-                  Professional setup, essential tools, zero hassle.
-                </p>
-              </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link to="/pricing">
+                <Button variant="hero" size="xl" className="animate-pulse-glow">
+                  View Pricing Packages
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </Link>
+              <Button variant="outline" size="xl">
+                See Our Work
+              </Button>
+            </div>
+          </section>
 
-              {/* Dashboard Preview */}
-              <div className="glass-card rounded-2xl p-4 mb-12 overflow-hidden">
-                <div className="aspect-video rounded-xl bg-gradient-to-br from-secondary to-muted flex items-center justify-center relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                      <Store className="w-8 h-8 text-primary-foreground" />
-                    </div>
-                    <p className="text-muted-foreground">Your store dashboard preview</p>
+          {/* Pricing Preview */}
+          <section className="py-16">
+            <div className="text-center mb-12">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Pricing for every stage
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Whether you're testing the waters or ready to dominate your niche, 
+                we have a package tailored to your goals.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              {packages.map((pkg, index) => (
+                <PackageCard key={index} {...pkg} />
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link to="/pricing">
+                <Button variant="ghost" size="lg">
+                  Compare all features
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+          </section>
+
+          {/* Why Choose Us */}
+          <section className="py-16">
+            <div className="text-center mb-12">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Why brands choose <span className="gradient-text">Bloom Studio</span>
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                We don't just build stores—we build complete ecommerce ecosystems 
+                designed for growth.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {whyChooseUs.map((item, index) => (
+                <div 
+                  key={index} 
+                  className="glass-card rounded-xl p-6 transition-all duration-300 hover:border-primary/30 hover:translate-y-[-2px]"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-primary" />
                   </div>
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-              </div>
+              ))}
+            </div>
+          </section>
 
-              {/* What's Included */}
-              <section>
-                <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
-                  What's Included
+          {/* CTA Section */}
+          <section className="py-16">
+            <div className="glass-card rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/5" />
+              <div className="relative">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Ready to launch your store?
                 </h2>
-                
-                <div className="space-y-4">
-                  {features.map((feature, index) => (
-                    <div 
-                      key={index}
-                      className="glass-card rounded-xl p-5 flex items-start gap-4 transition-all duration-300 hover:border-primary/30"
-                    >
-                      <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-1">
-                          {feature.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* Package Limits */}
-              <PackageLimits limits={limits} />
+                <p className="text-muted-foreground max-w-xl mx-auto mb-8">
+                  Join hundreds of successful brands that trust us with their Shopify stores. 
+                  Get started today with a package that fits your needs.
+                </p>
+                <Link to="/pricing">
+                  <Button variant="hero" size="xl">
+                    Get Started Now
+                    <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
             </div>
-
-            {/* Right Column - Pricing Card */}
-            <div>
-              <PricingCard 
-                price="$499"
-                turnaround="7-10 Days Turnaround"
-                support="Email Support Included"
-                features={pricingFeatures}
-              />
-            </div>
-          </div>
+          </section>
         </div>
       </main>
 
