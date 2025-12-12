@@ -178,7 +178,7 @@ const Index = () => {
           <section className="py-16">
             <div className="text-center mb-12">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Why brands choose <span className="gradient-text">Bloom Studio</span>
+                Why choose <span className="gradient-text">Bigga Bagg</span>
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
                 We don't just build stores—we build complete ecommerce ecosystems 

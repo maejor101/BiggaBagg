@@ -224,7 +224,7 @@ const Portfolio = () => {
                   with our e-commerce solutions. Let's create something amazing together.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/contact">
+                  <Link to="/onboarding">
                     <Button size="lg" className="w-full sm:w-auto">
                       Start Your Project
                       <ArrowRight className="w-4 h-4 ml-2" />
