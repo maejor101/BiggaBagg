@@ -37,9 +37,11 @@ const Header = () => {
           <Button variant="ghost" size="sm">
             Login
           </Button>
-          <Button variant="hero" size="sm">
-            Get Started
-          </Button>
+          <Link to="/onboarding">
+            <Button variant="hero" size="sm">
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </header>
