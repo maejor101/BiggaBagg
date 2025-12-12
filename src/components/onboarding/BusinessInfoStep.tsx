@@ -108,7 +108,7 @@ const BusinessInfoStep = ({ data, onChange }: BusinessInfoStepProps) => {
           <Input
             id="email"
             type="email"
-            placeholder="you@example.com"
+            placeholder="you@biggabagg.com"
             value={data.email}
             onChange={(e) => handleChange("email", e.target.value)}
           />
@@ -118,7 +118,7 @@ const BusinessInfoStep = ({ data, onChange }: BusinessInfoStepProps) => {
           <Label htmlFor="phone">Phone Number</Label>
           <Input
             id="phone"
-            placeholder="+27 12 345 6789"
+            placeholder="+27 73 342 7383"
             value={data.phone}
             onChange={(e) => handleChange("phone", e.target.value)}
           />

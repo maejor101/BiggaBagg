@@ -1,11 +1,15 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PackageCard from "@/components/PackageCard";
 import ComparisonTable from "@/components/ComparisonTable";
+import PartnersCarousel from "@/components/PartnersCarousel";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Shield, Headphones, Zap, ArrowDown } from "lucide-react";
+import { Sparkles, Shield, Headphones, Zap, ArrowDown, Plus, Minus } from "lucide-react";
 
 const Pricing = () => {
+  const [isTableExpanded, setIsTableExpanded] = useState(false);
+  
   const packages = [
     {
       name: "Basic",
@@ -117,7 +121,15 @@ const Pricing = () => {
               to complete ecosystem dominance.
             </p>
 
-            <Button variant="hero" size="xl" className="animate-pulse-glow">
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="animate-pulse-glow"
+              onClick={() => {
+                const packagesSection = document.getElementById('pricing-packages');
+                packagesSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               View Pricing Packages
               <ArrowDown className="w-5 h-5" />
             </Button>
@@ -135,7 +147,7 @@ const Pricing = () => {
           </section>
 
           {/* Package Cards Grid */}
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20" id="pricing-packages">
             {packages.map((pkg, index) => (
               <PackageCard key={index} {...pkg} />
             ))}
@@ -147,12 +159,35 @@ const Pricing = () => {
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
                 Compare features
               </h2>
-              <Button variant="outline" size="sm">
-                Download Spec Sheet
-                <ArrowDown className="w-4 h-4" />
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => setIsTableExpanded(!isTableExpanded)}
+                className="flex items-center gap-2"
+              >
+                {isTableExpanded ? (
+                  <>
+                    <Minus className="w-4 h-4" />
+                    Minimize Table
+                  </>
+                ) : (
+                  <>
+                    <Plus className="w-4 h-4" />
+                    Expand Table
+                  </>
+                )}
               </Button>
             </div>
-            <ComparisonTable />
+            <div 
+              className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                isTableExpanded ? 'max-h-none opacity-100' : 'max-h-48 opacity-80'
+              }`}
+              style={{
+                height: isTableExpanded ? 'auto' : '20%',
+              }}
+            >
+              <ComparisonTable />
+            </div>
           </section>
 
           {/* Trust Badges */}
@@ -188,6 +223,7 @@ const Pricing = () => {
         </div>
       </main>
 
+      <PartnersCarousel />
       <Footer />
     </div>
   );

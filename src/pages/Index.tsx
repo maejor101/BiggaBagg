@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PackageCard from "@/components/PackageCard";
+import PartnersCarousel from "@/components/PartnersCarousel";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight, Check, Store, Palette, Package, ShoppingBag, Mail, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -127,12 +128,18 @@ const Index = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/pricing">
-                <Button variant="hero" size="xl" className="animate-pulse-glow">
-                  View Pricing Packages
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
+              <Button 
+                variant="hero" 
+                size="xl" 
+                className="animate-pulse-glow"
+                onClick={() => {
+                  const packagesSection = document.getElementById('pricing-preview');
+                  packagesSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                View Pricing Packages
+                <ArrowRight className="w-5 h-5" />
+              </Button>
               <Button variant="outline" size="xl">
                 See Our Work
               </Button>
@@ -140,7 +147,7 @@ const Index = () => {
           </section>
 
           {/* Pricing Preview */}
-          <section className="py-16">
+          <section className="py-16" id="pricing-preview">
             <div className="text-center mb-12">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Pricing for every stage
@@ -223,6 +230,7 @@ const Index = () => {
         </div>
       </main>
 
+      <PartnersCarousel />
       <Footer />
     </div>
   );

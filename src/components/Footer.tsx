@@ -7,12 +7,15 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <Sparkles className="w-3 h-3 text-primary-foreground" />
-            </div>
-            <span className="font-display text-sm font-semibold text-foreground">
-              Bigga Bagg
-            </span>
+            <img 
+              src="/assets/Bigga bagg.co.svg" 
+              alt="Bigga Bagg" 
+              className="w-auto"
+              style={{ 
+                height: '200px',
+                filter: 'brightness(0) invert(1)'
+              }}
+            />
           </Link>
 
           <nav className="flex items-center gap-6">
@@ -28,7 +31,7 @@ const Footer = () => {
           </nav>
 
           <p className="text-sm text-muted-foreground">
-            © 2024 Bigga Bagg Inc. All rights reserved.
+            © 2025 Bigga Bagg Inc. All rights reserved.
           </p>
         </div>
       </div>

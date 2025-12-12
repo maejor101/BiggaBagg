@@ -104,9 +104,11 @@ const PackageBasic = () => {
                 <span className="text-muted-foreground">once-off</span>
               </div>
               
-              <Button variant="hero" size="lg" className="w-full sm:w-auto">
-                Get Started
-              </Button>
+              <Link to="/onboarding">
+                <Button variant="hero" size="lg" className="w-full sm:w-auto">
+                  Get Started
+                </Button>
+              </Link>
             </div>
             
             {/* Package Limits Card */}
@@ -171,9 +173,11 @@ const PackageBasic = () => {
               Get your professional Shopify store up and running in no time.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg">
-                Get Started Now
-              </Button>
+              <Link to="/onboarding">
+                <Button variant="hero" size="lg">
+                  Get Started Now
+                </Button>
+              </Link>
               <Link to="/pricing">
                 <Button variant="outline" size="lg">
                   Compare Packages
