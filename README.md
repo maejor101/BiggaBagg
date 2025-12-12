@@ -1,73 +1,49 @@
-# Welcome to your Lovable project
+# Bigga Bagg - Shopify Store Setup Services
 
-## Project info
+Premium Shopify store setup services for businesses of all sizes.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## About
 
-## How can I edit this code?
+Bigga Bagg specializes in creating professional Shopify stores that drive results. From basic setups to complete enterprise solutions, we handle every aspect of your e-commerce journey.
 
-There are several ways of editing your application.
+## Services
 
-**Use Lovable**
+- **Basic Package** (R2,000) - Essential store setup
+- **Standard Package** (R4,500) - Enhanced features and branding
+- **Advanced Package** (R7,500) - Professional scaling tools
+- **Premium Package** (R12,000) - Complete enterprise solution
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Contact
 
-Changes made via Lovable will be committed automatically to this repo.
+- Website: biggabagg.com
+- Phone: +27 73 342 7383
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Development
 
 This project is built with:
-
+- React + TypeScript
 - Vite
-- TypeScript
-- React
-- shadcn-ui
 - Tailwind CSS
+- shadcn/ui components
+- Embla Carousel
+- React Hook Form + Zod
 
-## How can I deploy this project?
+## Getting Started
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```bash
+# Install dependencies
+bun install
 
-## Can I connect a custom domain to my Lovable project?
+# Start development server
+bun dev
 
-Yes, you can!
+# Build for production
+bun build
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The application can be deployed to any static hosting provider such as:
+- Vercel
+- Netlify
+- Cloudflare Pages
