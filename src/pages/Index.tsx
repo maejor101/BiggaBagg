@@ -140,9 +140,11 @@ const Index = () => {
                 View Pricing Packages
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button variant="outline" size="xl">
-                See Our Work
-              </Button>
+              <Link to="/portfolio">
+                <Button variant="outline" size="xl">
+                  See Our Work
+                </Button>
+              </Link>
             </div>
           </section>
 
