@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight, Star } from "lucide-react";
 
@@ -8,9 +9,12 @@ interface PackageCardProps {
   features: string[];
   popular?: boolean;
   tier: string;
+  slug?: string;
 }
 
-const PackageCard = ({ name, price, description, features, popular = false, tier }: PackageCardProps) => {
+const PackageCard = ({ name, price, description, features, popular = false, tier, slug }: PackageCardProps) => {
+  const packageLink = slug ? `/packages/${slug}` : "#";
+  
   return (
     <div 
       className={`
@@ -57,14 +61,16 @@ const PackageCard = ({ name, price, description, features, popular = false, tier
         ))}
       </div>
 
-      <Button 
-        variant={popular ? "hero" : "outline"} 
-        size="lg" 
-        className="w-full"
-      >
-        Get Started
-        <ArrowRight className="w-4 h-4" />
-      </Button>
+      <Link to={packageLink}>
+        <Button 
+          variant={popular ? "hero" : "outline"} 
+          size="lg" 
+          className="w-full"
+        >
+          View Details
+          <ArrowRight className="w-4 h-4" />
+        </Button>
+      </Link>
     </div>
   );
 };

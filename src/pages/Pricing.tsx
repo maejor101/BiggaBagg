@@ -11,6 +11,7 @@ const Pricing = () => {
       name: "Basic",
       price: "R2,000",
       tier: "STARTER",
+      slug: "basic",
       description: "Essential tools to launch your first professional store.",
       features: [
         "3-5 Shopify Pages",
@@ -28,6 +29,7 @@ const Pricing = () => {
       name: "Standard",
       price: "R4,500",
       tier: "GROWTH",
+      slug: "standard",
       description: "Expanded features for growing brands and businesses.",
       features: [
         "Everything in Basic",
@@ -46,6 +48,7 @@ const Pricing = () => {
       name: "Advanced",
       price: "R7,500",
       tier: "SCALING",
+      slug: "advanced",
       popular: true,
       description: "Powerful tools for businesses scaling up rapidly.",
       features: [
@@ -65,6 +68,7 @@ const Pricing = () => {
       name: "Premium",
       price: "R12,000",
       tier: "ENTERPRISE",
+      slug: "premium",
       description: "Complete ecosystem dominance with dedicated management.",
       features: [
         "Everything in Advanced",
