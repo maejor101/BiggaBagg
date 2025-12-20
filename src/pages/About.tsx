@@ -53,24 +53,25 @@ const About = () => {
 
   const team = [
     {
-      name: "Sarah Johnson",
-      role: "Founder & CEO",
-      description: "10+ years in e-commerce, previously led digital transformation at major retail companies."
+      name: "S. Godwana",
+      role: "Sales Executive",
+      company: "Dijonova Technologies",
+      description: "Responsible for driving business growth by identifying new sales opportunities, building relationships and closing deals.",
+      image: "/assets/team1.png"
     },
     {
-      name: "Michael Chen",
-      role: "Head of Design",
-      description: "Award-winning designer with expertise in UX/UI and conversion optimization."
+      name: "K. Mabasa",
+      role: "Digital Business Consultant",
+      company: "Bigga Bagg",
+      description: "A digital business consultant specialising in Shopify store setup and online business systems, helping entrepreneurs launch professional e-commerce stores with clarity and confidence.",
+      image: "/assets/team2.png"
     },
     {
-      name: "Emily Rodriguez",
-      role: "Lead Developer",
-      description: "Full-stack developer specializing in Shopify and custom e-commerce solutions."
-    },
-    {
-      name: "David Thompson",
-      role: "Client Success Manager",
-      description: "Dedicated to ensuring every client achieves their e-commerce goals and beyond."
+      name: "V. Tswai",
+      role: "Technical Lead",
+      company: "Dijonova Technologies",
+      description: "Experienced developer specializing in e-commerce solutions and system integrations, ensuring seamless technical execution.",
+      image: "/assets/team3.png"
     }
   ];
 
@@ -197,24 +198,31 @@ const About = () => {
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
-                Meet Our Team
+                Meet Our Strategic Alliance
               </h2>
               <p className="text-lg text-muted-foreground">
                 The talented people behind your success
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {team.map((member, index) => (
-                <Card key={index}>
+                <Card key={index} className="overflow-hidden">
                   <CardHeader>
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent mx-auto mb-4 flex items-center justify-center">
-                      <Users className="w-8 h-8 text-primary-foreground" />
+                    <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden">
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <CardTitle className="text-center">{member.name}</CardTitle>
                     <CardDescription className="text-center font-medium text-primary">
                       {member.role}
                     </CardDescription>
+                    <div className="text-center mt-2">
+                      <span className="text-sm font-semibold text-accent">{member.company}</span>
+                    </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground text-center">
