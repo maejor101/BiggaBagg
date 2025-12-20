@@ -21,81 +21,14 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Fashion Forward E-commerce",
-      category: "E-commerce",
-      description: "Complete Shopify store for premium fashion brand with custom theme and advanced features.",
-      image: "/placeholder-project-1.jpg",
-      tags: ["Shopify", "Custom Theme", "Fashion"],
+      title: "Luxe Living Interiors",
+      category: "Custom Furniture & Interior Design",
+      description: "Premium Shopify store for luxury custom-made furniture based in Pretoria, South Africa. Features custom furniture, reupholstery services, nationwide delivery, and flexible payment options including lay-buy plans.",
+      image: "/assets/cover1.png",
+      tags: ["Shopify", "Custom Furniture", "Reupholstery", "South Africa", "Lay-Buy"],
       date: "2024",
-      link: "#"
-    },
-    {
-      id: 2,
-      title: "Tech Startup Platform",
-      category: "B2B",
-      description: "Modern e-commerce platform for tech products with custom integrations and analytics.",
-      image: "/placeholder-project-2.jpg",
-      tags: ["E-commerce", "Analytics", "Tech"],
-      date: "2024",
-      link: "#"
-    },
-    {
-      id: 3,
-      title: "Artisan Marketplace",
-      category: "Marketplace",
-      description: "Multi-vendor platform connecting artisans with customers worldwide.",
-      image: "/placeholder-project-3.jpg",
-      tags: ["Multi-vendor", "Marketplace", "Artisan"],
-      date: "2024",
-      link: "#"
-    },
-    {
-      id: 4,
-      title: "Fitness Brand Store",
-      category: "Health & Fitness",
-      description: "High-converting store for fitness equipment and supplements.",
-      image: "/placeholder-project-4.jpg",
-      tags: ["Fitness", "Health", "Supplements"],
-      date: "2024",
-      link: "#"
-    },
-    {
-      id: 5,
-      title: "Luxury Jewelry Store",
-      category: "Luxury",
-      description: "Elegant e-commerce experience for high-end jewelry and accessories.",
-      image: "/placeholder-project-5.jpg",
-      tags: ["Luxury", "Jewelry", "Premium"],
-      date: "2024",
-      link: "#"
-    },
-    {
-      id: 6,
-      title: "Home Decor Boutique",
-      category: "Home & Garden",
-      description: "Stylish online store for modern home decor and furniture.",
-      image: "/placeholder-project-6.jpg",
-      tags: ["Home Decor", "Furniture", "Interior"],
-      date: "2024",
-      link: "#"
+      link: "https://www.luxelivinginteriors.co.za/"
     }
-  ];
-
-  const categories = [
-    "All",
-    "E-commerce",
-    "B2B",
-    "Marketplace",
-    "Health & Fitness",
-    "Luxury",
-    "Home & Garden"
-  ];
-
-  const stats = [
-    { number: "50+", label: "Projects Completed" },
-    { number: "98%", label: "Client Satisfaction" },
-    { number: "2.5M+", label: "Revenue Generated" },
-    { number: "35+", label: "Industries Served" }
   ];
 
   return (
@@ -115,45 +48,6 @@ const Portfolio = () => {
                 Portfolio
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Discover the success stories we've built for businesses across various industries. 
-              From startup launches to enterprise transformations, see how we turn visions into 
-              high-converting e-commerce experiences.
-            </p>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="py-16 px-6 bg-muted/30">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Filter Categories */}
-        <section className="py-16 px-6">
-          <div className="container mx-auto">
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {categories.map((category, index) => (
-                <Button 
-                  key={index}
-                  variant={index === 0 ? "default" : "outline"}
-                  size="sm"
-                  className="rounded-full"
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -164,14 +58,18 @@ const Portfolio = () => {
               {projects.map((project) => (
                 <Card key={project.id} className="group overflow-hidden hover:shadow-lg transition-all duration-300">
                   <div className="aspect-video bg-muted relative overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                      <ShoppingBag className="w-12 h-12 text-primary/50" />
-                    </div>
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                      <Button size="sm" variant="secondary">
-                        View Project
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      </Button>
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <Button size="sm" variant="secondary">
+                          View Project
+                          <ExternalLink className="w-4 h-4 ml-2" />
+                        </Button>
+                      </a>
                     </div>
                   </div>
                   <CardHeader>
@@ -197,10 +95,12 @@ const Portfolio = () => {
                         </Badge>
                       ))}
                     </div>
-                    <Button variant="ghost" size="sm" className="w-full group">
-                      View Case Study
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-full">
+                      <Button variant="ghost" size="sm" className="w-full group">
+                        Visit Store
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </a>
                   </CardContent>
                 </Card>
               ))}

@@ -44,13 +44,6 @@ const About = () => {
     }
   ];
 
-  const stats = [
-    { number: "500+", label: "Stores Built" },
-    { number: "98%", label: "Client Satisfaction" },
-    { number: "50+", label: "Team Members" },
-    { number: "5", label: "Years Experience" }
-  ];
-
   const team = [
     {
       name: "S. Godwana",
@@ -75,14 +68,6 @@ const About = () => {
     }
   ];
 
-  const achievements = [
-    "Shopify Plus Certified Partners",
-    "Google Premier Partner",
-    "Facebook Marketing Partner",
-    "Top-rated Agency on Clutch",
-    "Winner: Best E-commerce Agency 2024"
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-muted/20">
       <Header />
@@ -105,22 +90,6 @@ const About = () => {
               We're a team of passionate e-commerce experts dedicated to transforming businesses 
               through beautiful, high-converting online stores. Your success is our mission.
             </p>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="py-16 px-6 bg-muted/30">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -230,29 +199,6 @@ const About = () => {
                     </p>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Achievements Section */}
-        <section className="py-20 px-6 bg-muted/30">
-          <div className="container mx-auto max-w-4xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
-                Our Achievements
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Recognition and certifications that validate our expertise
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 bg-background rounded-lg border">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="font-medium">{achievement}</span>
-                </div>
               ))}
             </div>
           </div>
